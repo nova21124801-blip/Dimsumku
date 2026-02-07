@@ -1,0 +1,37 @@
+/* TEST – HARUS TERLIHAT */
+
+.navbar .nav-link {
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #0d6efd;
+    transform: translateY(-2px);
+}
+
+.navbar-brand h1 {
+    letter-spacing: 1px;
+}
+
+.container-fluid.fixed-top {
+    z-index: 1030;
+}
+
+
+.fruite {
+    background-color: #e7f1ff !important;
+}
+
+/* NAV TAB BIRU */
+.tab-class .nav-pills a {
+    background-color: #e7f1ff !important;
+    border: 1px solid #0d6efd;
+}
+
+.tab-class .nav-pills a.active {
+    background-color: #0d6efd !important;
+}
+
+.tab-class .nav-pills a.active span {
+    color: #fff !important;
+}

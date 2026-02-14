@@ -65,9 +65,11 @@ class Kategori extends BaseController
 		echo view('part_adm/footer');
 	}
     public function delete($id){
-        $kat = new KategoriModel();
-        $kat->where('id_kategori', $id)->delete();
-        return redirect('kategori');
+        $kategori = new KategoriModel();
+    $kategori->delete($id);
+
+    return redirect()->to(base_url('kategori'))
+    ->with('success', 'Data berhasil dihapus');
     }
 
 }

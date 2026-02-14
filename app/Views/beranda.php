@@ -10,14 +10,14 @@
 
                 <div class="col-lg-8 text-end">
                     <ul class="nav nav-pills d-inline-flex text-center mb-5">
-
+                
                         <li class="nav-item">
                             <a class="d-flex m-2 py-2 bg-light rounded-pill active"
                                data-bs-toggle="pill" href="#tab-all">
                                 <span class="text-dark px-3">All Products</span>
                             </a>
                         </li>
-
+                    
                         <?php if (!empty($kat)): ?>
                             <?php foreach ($kat as $k): ?>
                                 <li class="nav-item">
@@ -66,15 +66,29 @@
                                                 <?= esc($brglist['nama_barang']) ?>
                                             </h5>
 
-                                            <p class="text-secondary small mb-3">
-                                                Produk pilihan dengan kualitas terbaik
+                                            <!-- Tambah tampilan harga di sini -->
+                                            <p class="text-primary fw-bold mb-2">
+                                               Rp <?= isset($brglist['harga']) ? number_format(esc($brglist['harga']), 0, ',', '.') : 'N/A' ?>
                                             </p>
 
                                             <div class="text-center">
-                                                <a href="<?= base_url('produk/detail/' . $brglist['kode_barang']) ?>"
-                                                   class="btn btn-primary rounded-pill px-4">
-                                                    <i class="fa fa-eye me-1"></i> Lihat Detail
-                                                </a>
+                                              <a href="<?= base_url('produk/detail/' . $brglist['kode_barang']) ?>"
+   class="btn btn-primary rounded-pill px-4">
+    <i class="fa fa-exclamation-circle me-1"></i>
+</a>
+ 
+<form action="<?= base_url('cart/tambahCart') ?>" method="post" class="d-inline">
+    <input type="hidden" name="id_item" value="<?= $brglist['id_item'] ?>">
+    <input type="hidden" name="jumlah" value="1">
+    <button type="submit" class="btn btn-outline-success rounded-pill px-3">
+        <i class="fa fa-shopping-cart me-1"></i> Add to Cart
+    </button>
+</form>
+
+     <a href="<?= base_url('checkout') ?>"
+       class="btn btn-warning rounded-pill px-3 text-white">
+        <i class="fa fa-credit-card"></i>
+    </a>
                                             </div>
                                         </div>
 

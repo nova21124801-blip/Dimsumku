@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= esc($title) ?> - K9 Project Resto</title>
+    <title><?= esc($title) ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -162,7 +162,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
        <a class="navbar-brand" href="<?= base_url() ?>">
-    <img src="<?= base_url('template/img/Dimsum-logo.jpg') ?>" 
+    <img src="<?= base_url('template/img/logo.jpg') ?>" 
          alt="Dimsum Chibi Icon" 
          class="me-2 dimsum-img" 
          style="height: 70px; width: auto; object-fit: contain;">
@@ -176,20 +176,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>"><i class="fas fa-home me-1"></i> Beranda</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="<?= base_url('menu') ?>"><i class="fas fa-book-open me-1"></i> Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" href="<?= base_url('keranjang') ?>">
-                            <i class="fas fa-shopping-cart me-1"></i> Keranjang
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartBadge">
-                                0
-                            </span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('admin') ?>"><i class="fas fa-user-shield me-1"></i> Admin</a>
-                    </li>
+                 
+                  
                 </ul>
             </div>
         </div>

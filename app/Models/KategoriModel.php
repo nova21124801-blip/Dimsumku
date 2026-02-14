@@ -8,7 +8,7 @@ class KategoriModel extends Model
 {
     protected $table = 'tbl_kategori';
     // WAJIB TAMBAHKAN INI
-    protected $primarikey = 'id_kategori';
+    protected $primaryKey = 'id_kategori';
 
     protected $useAutoIncrement = true;
     protected $allowedFields = ['nama_kategori'];

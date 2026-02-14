@@ -8,19 +8,27 @@ class TransaksiModel extends Model
 {
     protected $table      = 'tbl_transaksi';
     protected $primaryKey = 'id_transaksi';
-
     protected $useAutoIncrement = true;
-    protected $allowedFields = ['tgl_transaksi','id_user','status'];
-    // Relasi dengan Detail Transaksi
-    public function detail()
-    {
-        return $this->hasMany(DetailTransaksiModel::class, 'id_transaksi');
-    }
+
+    protected $allowedFields = [
+        'tgl_transaksi',
+        'id_user',
+        'nama_pembeli',
+        'email',
+        'payment_method',
+        'alamat',
+        'no_hp',
+        'subtotal',
+        'total',
+        'status',
+        'created_at',
+        'updated_at'
+    ];
 
     public function cek_data($id_user)
     {
-      return $this->db->table('tbl_transaksi')
-      ->where(array('id_user' => $id_user, 'status' => 'awal'))
-      ->get()->getRowArray();
+        return $this->where('id_user', $id_user)
+                    ->where('status', 'awal')
+                    ->first();
     }
 }

@@ -4,7 +4,7 @@
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-            <div class="col-sm-6">
+                <div class="col-sm-6">
                     <h1>Barang</h1>
                 </div>
                 <div class="col-sm-6">
@@ -38,11 +38,11 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="kode_barang">Kode Barang</label>
-                        <input type="text" class="form-control" id="kode_barang" name="kode_barang" value="<?= $barang ?>" readonly>
+                        <input type="text" class="form-control" id="kode_barang" name="kode_barang" value="<?= $barang ?>" >
                     </div>
                     <div class="form-group">
                         <label for="id_kategori">Kategori</label>
-                        <select name="id_kategori" id="id_kategori" class="form-control" >
+                        <select name="id_kategori" id="id_kategori" class="form-control">
                             <?php foreach ($kategori as $k) : ?>
                                 <option value="<?= $k['id_kategori'] ?>"><?= $k['nama_kategori'] ?></option>
                             <?php endforeach; ?>
@@ -52,11 +52,15 @@
                         <label for="nama_barang">Nama Barang</label>
                         <input type="text" class="form-control" id="nama_barang" name="nama_barang" placeholder="Enter Nama Barang" required>
                     </div>
+                    <!-- Tambah field harga di sini -->
+                    <div class="form-group">
+                        <label for="harga">Harga Barang</label>
+                        <input type="number" class="form-control" id="harga" name="harga" placeholder="Enter Harga Barang" min="1" required>
+                    </div>
                     <div class="form-group">
                         <label for="gambar">Gambar Barang</label>
-                        <input type="file" class="form-control" id="gambar" name="gambar" accept=".jpg,.jpeg">
+                        <input type="file" class="form-control" id="gambar" name="gambar" accept=".jpg,.jpeg,.png">
                     </div>
-                    
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
